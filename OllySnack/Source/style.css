@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Gabarito&display=swap');
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Croissant One', serif;
+    font-family: 'Gabarito', sans-serif;
+
+}
+:root{
+    --text-color:#4C4294;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.main-top{
+    width: 100%;
+    height: 5%;
+    background-color: #E2C7D6;
+    text-align: center;
+}
+.main-top h4{
+    font-weight: 500;
+    font-size: 1.2vw;
+    color: var(--text-color);
+}
+
+.main-bottom{
+    padding-inline:4vw;
+    width: 100%;
+    height: 95%;
+    background-image: url('https://ollys-ollys.com/cdn/shop/files/Hero_3x_5f49aae9-48bc-48dd-9d3c-8d5584b2fb92_1944x.webp?v=1685962348');
+    background-size: 100%;
+}
+
+.nav{
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+}
+
+.nav-logo img{
+    cursor: pointer;
+}
+.nav-left{
+    gap: 3vw;
+}
+.nav-left h3{
+    font-weight: 590;
+}
+.nav-right{
+    gap:3vw;
+}
+.nav-right h3{
+    font-weight: 500;
+}
+
+.nav-cart i{
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+/* utility codes */
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
