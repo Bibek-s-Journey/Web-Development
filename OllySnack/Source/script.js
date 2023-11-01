@@ -1,5 +1,5 @@
 let testimonial = document.querySelectorAll(".testinomial-statement");
-let test = document.querySelector(".testinomial-list");
+let test_list = document.querySelector(".test-list");
 let logo = document.querySelectorAll(".logos");
 
 let manual = function (index) {
@@ -16,8 +16,5 @@ let manual = function (index) {
 logo.forEach((element,index) => {
     element.addEventListener("click", (dets) => {
         manual(index);
-        console.log(index);
-        testimonial[index].style.transform = `translateY(-90%)`;
     });
 });
-

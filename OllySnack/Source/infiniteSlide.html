@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0 35px;
+            background: linear-gradient(to left top,#031a91,#8b53ff);
+        }
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+        }
+        .wrapper i{
+            height: 50px;
+            width: 50px;
+            background-color:#fff;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            font-size: 1.25ren;
+            transform: translateY(-50%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.23);
+        }
+        .wrapper i:first-child{
+            left: -22px;
+        }
+        .wrapper i:last-child{
+            right: -22px;
+        }
+        .wrapper .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - 12px);
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: 0;
+            scroll-behavior: smooth;
+        }
+        .carousel :where(.card,.img){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .carousel::-webkit-scrollbar{
+            display: none;
+        }
+        .carousel .card{
+            scroll-snap-align: start;
+            list-style: none;
+            background: #fff;
+            border-radius: 8px;
+            height: 342px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .carousel.no-transition{
+            scroll-behavior: auto;
+        }
+        .carousel.dragging{
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+        .carousel.dragging .card{
+            cursor: grab;
+            user-select: none;
+        }
+        .card .img{
+            background: #8b53ff;
+            width: 148px;
+            height: 148px;
+            border-radius: 50%;
+        }
+        .card .img img{
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+        .card h2{
+            font-weight: 500;
+            font-size: 1.56rem;
+            margin: 30px 0 5px;
+        }
+        .card span{
+            color: #6a6d78;
+            font-size: 1.31rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel">
+            <li class="card">
+                <div class="img"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2Zlc3Npb25hbCUyMGltYWdlcyUyMG9mJTIwZW1wbG95ZWVzfGVufDB8fDB8fHww" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1450340623/photo/portrait-of-successful-mature-boss-senior-businessman-in-glasses-asian-looking-at-camera-and.webp?b=1&s=170667a&w=0&k=20&c=Y-i6neXzFNqZYgMQintvHOyQco4blEVprSWU8RlmT2I=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1465591757/photo/successful-senior-architect-standing-in-her-office-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=-VVbc9DlGS7WFmX_qQ5EjjM2lpw-bp0v2zgqaOLTuUk=" alt=""></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1587604256/photo/portrait-lawyer-and-black-woman-with-tablet-smile-and-happy-in-office-workplace-african.jpg?s=612x612&w=0&k=20&c=n9yulMNKdIYIQC-Qns8agFj6GBDbiKyPRruaUTh4MKs=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?s=612x612&w=0&k=20&c=aQw5YhGl99hL1O77thwpQTmqVE7bc8rCX9H0gTeoX_k=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1398385367/photo/happy-millennial-business-woman-in-glasses-posing-with-hands-folded.jpg?s=612x612&w=0&k=20&c=Wd2vTDd6tJ5SeEY-aw0WL0bew8TAkyUGVvNQRj3oJFw=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=612x612&w=0&k=20&c=buXwOYjA_tjt2O3-kcSKqkTp2lxKWJJ_Ttx2PhYe3VM=" alt="" draggable="false"></div>
+                <h2>Blanche pearson</h2>
+                <span>Sales Manager</span>
+            </li>
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+
+    </div>
+    <script>
+        const wrapper = document.querySelector(".wrapper")
+        const carousel = document.querySelector(".carousel")
+        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i")
+        const carouselChildrens = [...carousel.children];
+        
+        let isDragging = false, startX, startScrollLeft,timeoutId;
+
+        //get the number of cards that can fit in the carousel at once
+        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth)
+        //insert copies of the last few cards to beginning of the carousel for infinite scrolling
+        carouselChildrens.slice(-cardPerView).reverse().forEach(card =>{
+            carousel.insertAdjacentHTML("afterbegin",card.outerHTML)
+        })
+        //insert copies of the first few cards to end of carousel for infinite scrolling
+        carouselChildrens.slice(0,cardPerView).forEach(card =>{
+            carousel.insertAdjacentHTML("beforeend",card.outerHTML)
+        })
+
+        //add event listeners for the arrow buttons to scroll the carousel left and right
+        arrowBtns.forEach(btn =>{
+            btn.addEventListener("click",() =>{
+                carousel.scrollLeft += btn.id ==="left" ? -firstCardWidth : firstCardWidth;
+            })
+        })
+
+
+        const dragStart = () =>{
+            isDragging = true;
+            carousel.classList.add("dragging");
+            //records the initial cursor and scroll position of the crousel
+            startX = e.pageX
+            startScrollLeft = carousel.scrollLeft
+        }
+        const dragging = (e) =>{
+            if(!isDragging) return //if isDragging is false return from here
+            console.log(e.pageX)
+            //updates the scroll position of the carousel based on the cursor movement
+            carousel.scrollLeft = startScrollLeft -  (e.pageX - startX);
+            
+        }
+        const dragStop = () =>{
+            isDragging = false;
+            carousel.classList.remove(".dragging")
+        }
+        const autoPlay = ()=>{
+            if(window.innerWidth < 800) return;  //return if window is smaller than 800
+            //autoplay the carousel after every 2500ms
+            timeoutId = setTimeout(()=> carousel.scrollLeft += firstCardWidth,2500)
+        }
+        autoPlay();
+        const infiniteScroll = () =>{
+            //if the carousel is at the beginning, scroll to the end
+            if(carousel.scrollLeft === 0){
+                carousel.classList.add("no-transition")
+                carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+                carousel.classList.remove("no-transition")
+
+
+            }
+            //if the carousel is at the end, scroll to the beginning
+            else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+                carousel.classList.add("no-transition")
+
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition")
+
+            }
+            //clear existing timeout and start autoplay if mouse is not hovering over carousel
+            clearTimeout(timeoutId)
+            if(!wrapper.matches(":hover")) autoPlay();
+        }
+        carousel.addEventListener("mousemove",dragging)
+        carousel.addEventListener("mousedown",dragStart)
+        document.addEventListener("mouseup",dragStop)
+        carousel.addEventListener("scroll",infiniteScroll)
+        wrapper.addEventListener("mouseenter",()=> clearTimeout(timeoutId))
+        wrapper.addEventListener("mouseleave",autoPlay);
+        
+    </script>
+</body>
+</html>
